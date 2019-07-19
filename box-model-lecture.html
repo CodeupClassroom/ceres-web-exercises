@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model Lecture</title>
+    <style type="text/css">
+
+        /*
+
+    BOX MODEL - a way to space elements from each other
+
+    Overall element size with box-sizing: content-box...
+        height = height + padding-top + padding-bottom + border-top + border-bottom
+        width = width + padding-left + padding-right + border-left + border-right
+
+    Specifying 1 value, 2 values, 3 values, 4 values (padding, margin, border)
+
+        1 = all sides
+        2 = y-axis x-axis
+        3 = top x-axis bottom
+        4 = top right bottom left
+
+    Overall element size with box-sizing: border-box...
+        height = height
+        width = width
+
+    Divs vs. Spans
+
+        */
+
+        body {
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            color: white;
+            padding: 5px;
+            border: 5px solid black;
+        }
+
+        .first-box {
+            background-color: blue;
+            box-sizing: content-box;
+        }
+
+        .second-box {
+            background-color: green;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box first-box">
+        <h1>Content Box</h1>
+    </div>
+    <div class="box second-box">
+        <h1>Border Box</h1>
+    </div>
+
+</body>
+</html>
