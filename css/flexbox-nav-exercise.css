@@ -5,6 +5,7 @@ body {
 
 nav {
     background: lightgray;
+    height: 4.25em;
 }
 
 nav ul {
@@ -12,6 +13,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    height: inherit;
     align-items: center;
 }
 
@@ -28,8 +30,24 @@ nav li {
     margin: .5em;
 }
 
+li:nth-child(6) {
+    margin-left: auto;
+}
+
+li:not(.logo-item) {
+    z-index: 1;
+}
+
 .logo-item {
     font-size: 3em;
-    margin: .2em auto;
+    margin: 0;
     font-family: "Montserrat";
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    display: flex;
+}
+
+.logo-item a {
+    margin: auto;
 }
