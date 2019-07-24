@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: "Work Sans";
+}
+
+nav {
+    background: lightgray;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: blue;
+}
+
+nav li {
+    margin: .5em;
+}
+
+.logo-item {
+    font-size: 3em;
+    margin: .2em auto;
+    font-family: "Montserrat";
+}
