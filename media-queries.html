@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Queries</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <style>
+        body {
+            margin: 0;
+        }
+        .wrapper {
+            display: grid;
+            padding: 1em;
+            grid-template-areas:
+        "button"
+        "header"
+        "nav"
+        "img"
+        "main"
+        "section"
+        "footer";
+        }
+        button {
+            grid-area: button;
+            background: #D6FEFE;
+            padding: 1.5em 0;
+        }
+        header {
+            grid-area: header;
+            text-align: center;
+        }
+        nav {
+            grid-area: nav;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            background: lightgrey;
+            display: block;
+            text-align: center;
+            padding: 1em 0;
+            margin: 1em 0;
+        }
+        img {
+            width: 100%;
+            grid-area: img;
+        }
+        main {
+            grid-area: main;
+        }
+        section {
+            grid-area: section;
+        }
+        footer {
+            grid-area: footer;
+            display: flex;
+            align-items: baseline;
+        }
+        footer p {
+            margin-right: auto;
+        }
+
+        footer span {
+            margin: .4em;
+            font-size: 1.3em;
+        }
+
+        @media screen and (min-width: 768px) {
+            /* remove top button */
+            button {
+                display: none;
+            }
+            /* change layout */
+            .wrapper {
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                    "header nav"
+                    "img img"
+                    "main section"
+                    "footer footer";
+                align-items: baseline;
+                max-width: 1300px;
+                margin: auto;
+                grid-gap: 3em;
+            }
+
+            h1 {
+                text-align: left;
+            }
+
+            /* change links */
+
+            nav ul {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                background: none;
+                margin-left: 2em;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <button>Skip to main content</button>
+        <header>
+            <h1>Company</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Work</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="https://via.placeholder.com/890x385" alt="placeholder image">
+        <main>
+            <h3>Main Section</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error laudantium molestiae quam quibusdam recusandae ullam veritatis! A ad asperiores at, consequatur eaque eius expedita facilis hic illum iste iure magni mollitia nam non omnis placeat porro possimus quas repellat totam. Facere fuga iste libero nam perspiciatis quos sequi totam ullam!</p>
+        </main>
+        <section>
+            <h4>Sub-section</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid commodi delectus dolore ducimus facilis hic laborum maxime modi neque nihil nobis nulla, pariatur perferendis repellendus. Facere quia tempore vel. Blanditiis doloremque esse eum necessitatibus nesciunt ullam ut! Autem eligendi id minus molestiae natus nihil odio, officia ratione tempora unde.</p>
+        </section>
+        <footer>
+            <p>(c) 2017 All rights reserved</p>
+            <span><i class="fab fa-twitter"></i></span>
+            <span><i class="fab fa-facebook-f"></i></span>
+            <span><i class="fab fa-instagram"></i></span>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
