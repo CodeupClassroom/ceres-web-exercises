@@ -9,4 +9,4 @@ var num2 = prompt("Enter a second number:");
 
 
 
-alert("num1 multipled by num2 is: " + (num1 - num2));
+alert("num1 multiplied by num2 is: " + (num1 * num2));
