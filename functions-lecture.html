@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Lecture</title>
+</head>
+<body>
+
+
+<script>
+
+    "use strict";
+
+    /*
+        OUTLINE OF LECTURE
+
+        the problem that functions solve...
+            repetition of a process
+            logical grouping of instructions
+
+        what functions are
+
+        how to call a function
+            the difference between including the () or not
+            how to pass arguments to a function
+                pass correct amount
+                pass none when defined
+                pass more
+
+        assigning the value vs. definition of a function to a variable
+
+        syntax for a function declaration
+            return statement
+            parameters
+
+        syntax for function expression
+
+        solving a few example functions
+
+        !! mini-exercises !!
+
+        scope
+            global and local variables
+            side effects
+            pure functions
+
+        higher order functions
+            callbacks
+            anonymous functions
+
+        IIFE
+
+    */
+
+        // *** SEE NOTES ***
+
+        function bark(someSound) {
+            return "The dog says: " + someSound;
+        }
+
+        // ===== CALLING A FUNCTION
+
+            //     the difference between including the () or not
+            //     how to pass arguments to a function
+            //         pass correct amount
+            //         pass none when defined
+            //         pass more
+
+            bark("Bow wow");
+            console.log(bark("Bow"));
+            console.log(bark());
+            console.log(bark("bow wow", 3, true, "asdf"));
+
+
+        // ===== ASSIGNING VALUE VS. DEFINITION
+
+            var dogSound = bark("WOOF!");
+            console.log(dogSound);
+
+            var makeDogSound = bark;
+            console.log(makeDogSound);
+            console.log(makeDogSound("hello"));
+
+
+        /* ===== FUNCTION DECLARATION
+
+            function doSomething(OPTIONAL_PARAMETERS) {
+                // doing something...
+                return SOME_VALUE;
+            }
+
+        */
+
+            function returnInputAsOutput(input) {
+                return input;
+            }
+
+            console.log(returnInputAsOutput(3));
+
+        /* ===== FUNCTION EXPRESSION
+
+            var someVariable = function(OPTIONAL_PARAMETERS) {
+                // do something
+                return SOME_VALUE;
+            };
+
+        */
+
+            function sayHello(greeting) {
+                return greeting;
+            }
+
+            var sayHello = function(greeting) {
+                return greeting;
+            };
+
+
+
+        // ===== SCOPE
+
+            // var keyword creates "Function Scope" variables
+
+            var globalVar = "Look, I'm Global!"; // declare a global variable
+
+            function scopeExample() {
+                var localVar = "Look, I'm Local!"; // declare a local variable
+                alert(localVar); // localVar is accessible here
+                alert(globalVar); // globalVar is accessible here
+                nestedFunction();
+            }
+
+            scopeExample();
+
+            // alert(localVar); // localVar is NOT accessible here and this will produce an error
+
+
+        // EXTRA SCOPE EXAMPLE
+
+            var x = 300;
+            var y = 100;
+
+            function scopeExample2(x, y) {
+                var x = 1;
+                var y = 2;
+                console.log('x: ' + x + ' y: ' + y);
+                return x + y;
+            }
+
+            scopeExample2();
+            console.log('x: ' + x + ' y: ' + y);
+
+
+        // ===== SIDE EFFECTS VS. PURE FUNCTIONS
+
+
+            // function with side effects
+            var word = "hello";
+
+            function shoutWord() {
+                return word.toLocaleUpperCase();
+            }
+
+            // pure function
+            function shoutWord(word) {
+                return word.toLocaleUpperCase();
+            }
+
+
+            // function with side effects
+            var startCount = 1;
+
+            function count() {
+                return ++count;
+            }
+
+            // pure function
+            function count(startCount) {
+                return ++startCount;
+            }
+
+
+    // =====  CALLBACK, ANONYMOUS, HIGHER ORDER FUNCTIONS
+
+        function returnFive() {
+            return 5;
+        }
+        // addTwo is a "Higher Order Function" because it takes in other functions as arguments
+        //     functions that return a function are also "Higher Order Functions"
+        function addTwo(number) {
+            return number() + 2;
+        }
+
+        console.log(addTwo(returnFive)); // Callback function "returnFive" is passed to addTwo
+
+        console.log(addTwo(function() { // Anon function passed to addTwo()
+            return 10;
+        }))
+
+        // other common higher order functions built in to JS: setInterval, setTimeout, map, filter, reduce, fetch
+
+
+    // =====  IIFE
+
+
+    //  =====  RECURSION and RETURNING A FUNCTION AS AN OUTPUT
+
+    // returned as a value from another function
+
+        function happy() {
+            console.log("I'm happy!");
+        }
+
+        function notHappy() {
+            console.log("I'm NOT happy!");
+        }
+
+        function chooseMessage(mood) {
+            var result;
+
+            if (mood === "happy") {
+                result = happy;
+            } else {
+                result = notHappy;
+            }
+
+            return result;
+        }
+
+        var sayMessage = chooseMessage("sad");
+
+        sayMessage();
+
+
+    // recursion
+
+        function songThatNeverEnds() {
+            console.log("...this is the song that never ends "
+                + "and it goes on an my friend. "
+                + "Some people, started singing it not knowing what it was, "
+                + "and they'll continue singing it forever just because...");
+            songThatNeverEnds();
+        }
+
+        songThatNeverEnds();
+
+
+
+</script>
+</body>
+</html>
