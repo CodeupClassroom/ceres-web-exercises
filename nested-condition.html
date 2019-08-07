@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    "use strict";
+
+    // write a function that takes in a string
+    // if the string is "bob" return true
+    // otherwise return longer than bob, same length as bob or shorter than bob
+
+    function checkBob(str) {
+        if (str === "bob") {
+            return true;
+        } else {
+            if (str.length === "bob".length) {
+                return "same as bob";
+            } else if (str.length > "bob".length) {
+                return "longer than bob";
+            } else {
+                return "shorter than bob";
+            }
+        }
+    }
+
+
+
+
+
+
+    function checkBob(str) {
+        if (str === "bob") {
+            return true;
+        } else {
+            return checkVsBobLength(str);
+        }
+    }
+    function checkVsBobLength(str) {
+        if (str.length === "bob".length) {
+            return "same as bob";
+        } else if (str.length > "bob".length) {
+            return "longer than bob";
+        } else {
+            return "shorter than bob";
+        }
+    }
+
+
+
+
+
+    console.log(checkBob("sally"), "longer than bob");
+    console.log(checkBob("bob"), true);
+    console.log(checkBob("jo"), "shorter than bob");
+    console.log(checkBob("joe"), "same as bob");
+
+</script>
+
+</body>
+</html>
