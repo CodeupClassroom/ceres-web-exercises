@@ -9,239 +9,381 @@
 
 <script>
 
+
     "use strict";
 
-    /*
-        OUTLINE OF LECTURE
+    // *** SEE NOTES ***
 
-        the problem that functions solve...
-            repetition of a process
-            logical grouping of instructions
+    // function bark(nameOfDog, someSound) {
+    //     return nameOfDog + " says: " + someSound;
+    // }
 
-        what functions are
+    // ===== CALLING A FUNCTION
 
-        how to call a function
-            the difference between including the () or not
-            how to pass arguments to a function
-                pass correct amount
-                pass none when defined
-                pass more
+    //     the difference between including the () or not
+    //     how to pass arguments to a function
+    //         pass correct amount
+    //         pass none when defined
+    //         pass more
 
-        assigning the value vs. definition of a function to a variable
+    // var dogSays = bark("Fred", "moo");
+    //
+    // console.log(dogSays);
 
-        syntax for a function declaration
-            return statement
-            parameters
 
-        syntax for function expression
 
-        solving a few example functions
 
-        !! mini-exercises !!
+    // function bark(nameOfDog, someSound) {
+    //     return nameOfDog + " says: " + someSound;
+    // }
 
-        scope
-            global and local variables
-            side effects
-            pure functions
+    // ===== ASSIGNING VALUE VS. DEFINITION
 
-        higher order functions
-            callbacks
-            anonymous functions
+    // var dogSound = bark; // assigning the definition
+    // var sound = bark(); // assigning the output
 
-        IIFE
+
+
+
+    /* ===== FUNCTION DECLARATION
+
+        function doSomething(OPTIONAL_PARAMETERS) {
+            // doing something...
+            return SOME_VALUE;
+        }
 
     */
 
-        // *** SEE NOTES ***
-
-        function bark(someSound) {
-            return "The dog says: " + someSound;
-        }
-
-        // ===== CALLING A FUNCTION
-
-            //     the difference between including the () or not
-            //     how to pass arguments to a function
-            //         pass correct amount
-            //         pass none when defined
-            //         pass more
-
-            bark("Bow wow");
-            console.log(bark("Bow"));
-            console.log(bark());
-            console.log(bark("bow wow", 3, true, "asdf"));
 
 
-        // ===== ASSIGNING VALUE VS. DEFINITION
+    /* ===== FUNCTION EXPRESSION
 
-            var dogSound = bark("WOOF!");
-            console.log(dogSound);
+        var someVariable = function(OPTIONAL_PARAMETERS) {
+            // do something
+            return SOME_VALUE;
+        };
 
-            var makeDogSound = bark;
-            console.log(makeDogSound);
-            console.log(makeDogSound("hello"));
+    */
 
-
-        /* ===== FUNCTION DECLARATION
-
-            function doSomething(OPTIONAL_PARAMETERS) {
-                // doing something...
-                return SOME_VALUE;
-            }
-
-        */
-
-            function returnInputAsOutput(input) {
-                return input;
-            }
-
-            console.log(returnInputAsOutput(3));
-
-        /* ===== FUNCTION EXPRESSION
-
-            var someVariable = function(OPTIONAL_PARAMETERS) {
-                // do something
-                return SOME_VALUE;
-            };
-
-        */
-
-            function sayHello(greeting) {
-                return greeting;
-            }
-
-            var sayHello = function(greeting) {
-                return greeting;
-            };
+    // function bark(someSound) {
+    //     return "The dog says: " + someSound;
+    // }
+    //
+    // var bark = function(someSound) {
+    //     return "The dog says: " + someSound;
+    // };
+    //
+    // bark("woof woof");
 
 
 
-        // ===== SCOPE
-
-            // var keyword creates "Function Scope" variables
-
-            var globalVar = "Look, I'm Global!"; // declare a global variable
-
-            function scopeExample() {
-                var localVar = "Look, I'm Local!"; // declare a local variable
-                alert(localVar); // localVar is accessible here
-                alert(globalVar); // globalVar is accessible here
-                nestedFunction();
-            }
-
-            scopeExample();
-
-            // alert(localVar); // localVar is NOT accessible here and this will produce an error
 
 
-        // EXTRA SCOPE EXAMPLE
+    // ===== MINI PROBLEMS
 
-            var x = 300;
-            var y = 100;
+    // Write a function, returnFive, that returns the number five. No inputs should be defined.
 
-            function scopeExample2(x, y) {
-                var x = 1;
-                var y = 2;
-                console.log('x: ' + x + ' y: ' + y);
-                return x + y;
-            }
+    // You have to write a function that returns the number five
 
-            scopeExample2();
-            console.log('x: ' + x + ' y: ' + y);
+    // pieces of data
 
+        // name of function is "returnFive"
+        // no inputs
+        // output is returns the value of five
 
-        // ===== SIDE EFFECTS VS. PURE FUNCTIONS
-
-
-            // function with side effects
-            var word = "hello";
-
-            function shoutWord() {
-                return word.toLocaleUpperCase();
-            }
-
-            // pure function
-            function shoutWord(word) {
-                return word.toLocaleUpperCase();
-            }
+    // function returnFive() {
+    //     return 5;
+    // }
+    //
+    // console.log(returnFive());
 
 
-            // function with side effects
-            var startCount = 1;
 
-            function count() {
-                return ++count;
-            }
+    // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
 
-            // pure function
-            function count(startCount) {
-                return ++startCount;
-            }
+    function isFive(input) {
+        var output;
+
+        // input must be equal to the string five or the number five
+
+        output = input === "5" || input === 5;
+
+        // output = input == 5;
+
+        return output;
+    }
+
+    //
+    // function isFive(input) {
+    //     return parseInt(input) === 5;
+    // }
+    //
+
+
+
+
+
+    // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+    function isShortWord(str) {
+        return str.length < 5;
+    }
+
+
+
+
+
+
+    // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+    // function isSameLength(str1, str2) {
+    //     // var output = str1.length === str2.length;
+    //     // return output;
+    //     return str1.length === str2.length;
+    // }
+    //
+    //
+    // // "cat" "dog" true
+    // console.log(isSameLength("cat", "dog"), true); // true
+    //
+    //
+    // // "hello" "dog" false
+    //
+    // console.log(isSameLength("hello", "dog"), false); // false
+
+
+
+
+
+    // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+
+    // inputs: string, number
+    // output: string
+    //
+    // function getSmallerSegment(str, num) {
+    //     return str.substring(0, num).toLowerCase();
+    // }
+    //
+    //
+    // // test cases...
+    // console.log(getSmallerSegment("hello", 3), "hel");
+    // console.log(getSmallerSegment("SUBMARINE", 6), "submar");
+
+
+
+    // ===== RETURN STATEMENT
+
+
+    // function bark(nameOfDog, someSound) {
+    //     console.log(3);
+    // }
+    //
+    // console.log(bark());
+    //
+
+
+    // function sum(num1, num2) {
+    //     var output = num1 + num2;
+    //     return output;
+    // }
+    //
+    // console.log(sum(2, 3));
+
+
+
+    // function anotherBark(nameOfDog, someSound) {
+    //     return 3;
+    // }
+    //
+    // console.log(anotherBark());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ===== SCOPE
+
+    // var keyword creates "Function Scope" variables
+
+    // var globalVar = "Look, I'm Global";
+    //
+    // function scopeExample() {
+    //     var localVar = "Look, I'm local";
+    //     alert(localVar);
+    //     alert(globalVar);
+    // }
+    //
+    // console.log(localVar);
+    //
+    // console.log(scopeExample());
+
+
+    // alert(localVar); // localVar is NOT accessible here and this will produce an error
+
+
+    // EXTRA SCOPE EXAMPLE
+
+    // var x = 300;
+    // var y = 100;
+    //
+    // function scopeExample2() {
+    //     x = 1;
+    //     y = 2;
+    //     console.log('2nd x: ' + x + ' y: ' + y);
+    //     return x + y;
+    // }
+    //
+    // console.log('1st x: ' + x + ' y: ' + y);
+    // console.log(scopeExample2());
+
+
+    // ===== SIDE EFFECTS VS. PURE FUNCTIONS
+
+    // function with side effects
+
+    // var word = "hello";
+    //
+    // function shoutWord() {
+    //     word = input.toUpperCase();
+    // }
+    //
+    //
+    // function shoutWord(input) {
+    //     return input.toUpperCase();
+    // }
+    //
+    //
+    // console.log(shoutWord(word));
+
+
+    // pure function
+
+
+
+    // function with side effects
+
+
+    // pure function
+
+
+
+    // =====  IIFE
 
 
     // =====  CALLBACK, ANONYMOUS, HIGHER ORDER FUNCTIONS
 
-        function returnFive() {
-            return 5;
-        }
-        // addTwo is a "Higher Order Function" because it takes in other functions as arguments
-        //     functions that return a function are also "Higher Order Functions"
-        function addTwo(number) {
-            return number() + 2;
-        }
+    // addTwo is a "Higher Order Function" because it takes in other functions as arguments
+    // functions that return a function are also "Higher Order Functions"
 
-        console.log(addTwo(returnFive)); // Callback function "returnFive" is passed to addTwo
+    // function returnFive() { // callback function
+    //     return 5;
+    // }
+    //
+    // function addTwo(number) { // higher order function
+    //     return number() + 2;
+    // }
+    //
+    // console.log(addTwo(returnFive));
+    //
+    // console.log(addTwo(function() {
+    //     return 3;
+    // }));
 
-        console.log(addTwo(function() { // Anon function passed to addTwo()
-            return 10;
-        }))
 
-        // other common higher order functions built in to JS: setInterval, setTimeout, map, filter, reduce, fetch
+    // Callback function "returnFive" is passed to addTwo
+
+    // Anon function passed to addTwo()
+
+    // other common higher order functions built in to JS: //
+    // setInterval,
+    // setTimeout, map, filter, reduce, fetch
 
 
-    // =====  IIFE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //  =====  RECURSION and RETURNING A FUNCTION AS AN OUTPUT
 
     // returned as a value from another function
 
-        function happy() {
-            console.log("I'm happy!");
-        }
-
-        function notHappy() {
-            console.log("I'm NOT happy!");
-        }
-
-        function chooseMessage(mood) {
-            var result;
-
-            if (mood === "happy") {
-                result = happy;
-            } else {
-                result = notHappy;
-            }
-
-            return result;
-        }
-
-        var sayMessage = chooseMessage("sad");
-
-        sayMessage();
+    // function happy() {
+    //     console.log("I'm happy!");
+    // }
+    //
+    // function notHappy() {
+    //     console.log("I'm NOT happy!");
+    // }
+    //
+    // function chooseMessage(mood) {
+    //     var result;
+    //
+    //     if (mood === "happy") {
+    //         result = happy;
+    //     } else {
+    //         result = notHappy;
+    //     }
+    //
+    //     return result;
+    // }
+    //
+    // var sayMessage = chooseMessage("sad");
+    //
+    // sayMessage();
 
 
     // recursion
 
-        function songThatNeverEnds() {
-            console.log("...this is the song that never ends "
-                + "and it goes on an my friend. "
-                + "Some people, started singing it not knowing what it was, "
-                + "and they'll continue singing it forever just because...");
-            songThatNeverEnds();
-        }
-
-        songThatNeverEnds();
+    // function songThatNeverEnds() {
+    //     console.log("...this is the song that never ends "
+    //         + "and it goes on an my friend. "
+    //         + "Some people, started singing it not knowing what it was, "
+    //         + "and they'll continue singing it forever just because...");
+    //     songThatNeverEnds();
+    // }
+    //
+    // songThatNeverEnds();
 
 
 
