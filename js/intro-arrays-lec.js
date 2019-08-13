@@ -17,9 +17,9 @@
 
     // Our testArray variable has now been declared, but it is an empty array. To declare an array with information inside of it, we would do the following.
 
-    var instructors = ["David S.", "Sophie", "Daniel", "Justin", "Fernando", "Ryan", "Zach", "Maggie", "David E.", "Cody The Duck"];
+    var instructors = ["David S.", "Sophie", "Daniel", "Justin", "Fernando", "Ryan", "Zach", "Maggie", "David E.", "Vivian", "Cody The Duck"];
 
-    // Our instructors variable has been assigned to an array with 10 elements inside of it. All three of our elements are strings, but not all elements have to be of the same type.
+    // Our instructors variable has been assigned to an array with 11 elements inside of it. All three of our elements are strings, but not all elements have to be of the same type.
 
     var falsyValues = [false, null, "", 0, undefined, NaN];
 
@@ -31,18 +31,18 @@
 
     // We can count the length of our arrays.
 
-    // console.log(instructors.length);
-    // console.log([].length);
-    // console.log([1,1,1,1,1,1,1,1,9,9,9,9,0,0,0,10000000,11,22,23,24,34,45].length);
+    console.log(instructors.length);
+    console.log([].length);
+    console.log([1,1,1,1,1,1,1,1,9,9,9,9,0,0,0,10000000,11,22,23,24,34,45].length);
 
     // Here we're console logging the length of some arrays. Note that we can use this variable with a value of an array, or an array literal.
 
     // We can also access the individual values held in an array. It's important to note: the elements of an array are zero indexed, meaning
     // the first element is at index point 0, the second at index point 1, etc.
 
-    // console.log(instructors[2]);
-    // console.log([1,2,3][0]);
-    // console.log(testArray[9]);
+    console.log(instructors[2]);
+    console.log([1,2,3][0]);
+    console.log(testArray[9]);
 
     // Once again, we can access the element of an array held in a variable, or of an array literal. Notice that if we try to access an
     // element of an array at an index larger than what the array has, we get a return of undefined.
@@ -51,11 +51,11 @@
 
     var randomIndex = Math.floor(Math.random() * instructors.length);
 
-    // alert("One of your instructors is named: " + instructors[randomIndex]);
+    alert("One of your instructors is named: " + instructors[randomIndex]);
 
     // Something I've neglected mentioning is what happens when we console log an array (mostly for a reason);
 
-    // console.log(instructors);
+    console.log(instructors);
 
     // Notice how in the console it is noted as an array, and displays the information as an array itself.
 
@@ -69,9 +69,9 @@
     // Let's start by listing out our instructors in the console. We can do this by using a for loop to cycle through every index of the
     // array.
 
-    // for (var i = 0; i < instructors.length; i++) {
-    //     console.log("One of your instructors is named: " + instructors[i]);
-    // }
+    for (var i = 0; i < instructors.length; i++) {
+        console.log("One of your instructors is named: " + instructors[i]);
+    }
 
     // Note that we wanted i to increment only with it was less than the length of our instructor array, but not until it was equal to it.
     // Remember that an array is zero indexed, meaning our arrays start at the index of zero, and continue until an index point one number
@@ -95,7 +95,7 @@
         return -1;
     }
 
-    // testAllForFalsy(falsyValues);
+    testAllForFalsy(falsyValues);
 
     // The above function iterates through an array to determine if all the values in it are false. When it detects a truthy value, it will
     // return the index of the first instance of a truthy value, and send an alert stating the index, If no truthy values are found, it will
@@ -116,22 +116,39 @@
 
     // Below are the examples of iteration with for loops rewritten with a forEach loop.
 
-    // instructors.forEach(function(teacher) {
-    //     console.log("One of your instructors is named: " + teacher);
-    // });
+    instructors.forEach(function(instructor, index, array) {
+        if (index % 2 !== 0) {
+            console.log("Instructor #" + parseInt(index + 1) + " of " + array.length + " is named: " + instructor);
+        }
+    });
+
+    var numbers = [17,22,34,52,6];
+
+    numbers.forEach(function(number,index) {
+        if (index % 2 === 0) {
+            console.log(number * 2);
+        }
+    });
 
     function testEachForFalsy(array) {
+        var truthyFound;
         array.forEach(function(element, i) {
             if (element) {
                 alert("Truthy value detected at index: " + i);
+                truthyFound = i;
                 return i;
             }
         });
+        if (truthyFound) {
+            return truthyFound;
+        }
         alert("All values of array are falsy.");
         return -1;
     }
 
     // testEachForFalsy(falsyValues);
+
+    // The return of i within the forEach loop is a return for the anonymous function being passed into the forEach. Thus when I return I I break out of the loop, but the return is not then used to "break" out of the function. Thus we establish a value of truthyFound to capture the index of the truthy value in the array, and then return a number greater than -1 if a truthy value exists, or -1 is all elements are falsy.
 
     // Any Questions???
 
