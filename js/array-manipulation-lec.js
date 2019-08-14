@@ -121,7 +121,7 @@
 
         // The slice method will work alot like the substring method, in that it can return a value from either one or two arguments
 
-    var myFavCheeses = cheeses.slice(cheeses.indexOf("Muenster"), cheeses.indexOf("Kraft American Singles") + 1);
+    var myFavCheeses = cheeses.slice(cheeses.indexOf("Muenster"), cheeses.indexOf("Kraft American Singles")+1);
 
     // By passing one argument, we start at the specified index and return an array to the end.
     var otherCheeses = cheeses.slice(7);
@@ -135,12 +135,10 @@
     // Notice that using the slice method didn't remove the cheeses I liked from the cheeses array. By assigning the return from the slice method to a variable I was able to call on it value.
 
     function copyOfArray(array) {
-        return array.slice(0);
+        return array.slice();
     }
 
-    var reversedCheeses = copyOfArray(cheeses);
-
-    reversedCheeses.reverse();
+    var reversedCheeses = copyOfArray(cheeses).reverse();
 
     logTheCheeses();
 
@@ -171,7 +169,7 @@
 
     console.log(names);
 
-    csvNames = names.reverse().join(",");
+    csvNames = names.reverse().join();
 
     console.log(csvNames);
 
@@ -198,6 +196,6 @@
 
     console.log(removeAtIndex(cheeses, cheeses.indexOf("Kraft American Singles")));
 
-
+    logTheCheeses();
 
 })();
