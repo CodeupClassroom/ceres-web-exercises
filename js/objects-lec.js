@@ -58,6 +58,19 @@ thirdPerson.heart = {
 
 console.log(thirdPerson.heart.pumpBlood());
 
+person.heart = {};
+// This call won't work.
+// console.log(person.heart.pumpBlood());
+
+
+var user = {
+    username: "LordOfLoL",
+    password: "some-hashed-mess",
+    email: "dave@dave.co.uk",
+    age: 17
+};
+console.log(user.toString());
+
 // In the above example, not only were we able to give our thirdPerson variable a new property, but we were able to give that property a property and method!
 
 // Note on assigning method: Doesn't it look familiar?
@@ -69,7 +82,7 @@ var countToFive = function() {
     return "Done!"
 };
 
-countToFive();
+// countToFive();
 
 // Looks a lot like function expression, huh? 👀
 
@@ -84,7 +97,7 @@ thirdPerson.introduction();
 // By using the this keyword, I'm able to access the object that the method or property is from and make reference to it when accessing another method or property.
 
 thirdPerson.heart.transfusion = function(bloodType) {
-    return bloodType === this.bloodType || bloodType === "O-" || this.bloodType === "O-";
+    return bloodType === this.bloodType || bloodType === "O-" || this.bloodType === "AB+";
 };
 
 console.log(thirdPerson.heart.transfusion("B+"));
