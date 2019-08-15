@@ -160,4 +160,31 @@
      *   `showBookInfo` function.
      */
 
+    function createAuthor(firstName, lastName) {
+        return {
+            firstName: firstName,
+            lastName: lastName
+        }
+    }
+
+    function createBook(title, author) {
+        return {
+            title: title,
+            author: author
+        }
+    }
+
+    function showBookInfo(book, i) {
+        console.log("Book #"+ (i + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: "+ book.author.firstName + " " + book.author.lastName);
+        console.log("---")
+    }
+
+    books.push(createBook("Garfield Gains Weight", createAuthor("Jim", "Davis")));
+
+    books.forEach(function(book, i) {
+        showBookInfo(book, i);
+    });
+
 })();
