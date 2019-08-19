@@ -11,6 +11,7 @@
 
 <script src="js/keys.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+<script src="js/mapbox-utils.js"></script>
 <script>
     mapboxgl.accessToken = mapboxToken;
 
@@ -21,6 +22,8 @@
         center: [-98.4916, 29.4252]
     });
 
+    // Creating a Popup and Marker Example
+
     var popup = new mapboxgl.Popup()
         .setHTML("<p>The Alamo Rocks!</p>");
 
@@ -30,8 +33,18 @@
       .addTo(map);
 
 
-    marker.togglePopup();
+    marker.togglePopup();x
 
+    // Geocode Example
+    geocode("Paris, Texas", mapboxToken).then(function(result) {
+        map.jumpTo({center: result});
+    });
+
+
+    // Reverse Geocode Example
+    reverseGeocode({lng: -95.5555, lat: 33.6609}, mapboxToken).then(function(result) {
+        console.log(result);
+    });
 
 </script>
 
