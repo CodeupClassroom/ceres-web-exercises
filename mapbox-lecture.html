@@ -13,12 +13,24 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
 <script>
     mapboxgl.accessToken = mapboxToken;
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 14,
         center: [-98.4916, 29.4252]
     });
+
+    var popup = new mapboxgl.Popup()
+        .setHTML("<p>The Alamo Rocks!</p>");
+
+    var marker = new mapboxgl.Marker()
+      .setLngLat([-98.4916, 29.4260])
+      .setPopup(popup)
+      .addTo(map);
+
+
+    marker.togglePopup();
 
 
 </script>
