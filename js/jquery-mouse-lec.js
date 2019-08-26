@@ -14,12 +14,19 @@ $('#important-circle').click(function() {
 
 // When we click on the smaller circle, the background image changes! Note that we can use the this keyword as well!
 
-// $('h1').dblclick(function(){
-//     $(this).html('The Bringer of Jollity')
-// });
+$('h1').dblclick(function(){
+    $(this).html('The Bringer of Jollity')
+});
 
-// $('.grandma').hover(function() {
-//     $(this).css('background-image','url(img/jupiter-coin.webp)');
-// }, function() {
-//     $(this).css('background-image','url(img/jupiter.webp)');
-// });
+$('.grandma').hover(function() {
+    $(this).css('background-image','url(img/jupiter-coin.webp)');
+}, function() {
+    $(this).css('background-image','url(img/jupiter.webp)');
+});
+
+$('h1').mouseenter(function() {
+    $(this).css({
+        "color" : "rebeccapurple",
+        "transition": "2s"
+    }).html("jQuery Events are Fun!");
+});
