@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Introduction</title>
+</head>
+<body>
+
+    <h1 id="project-header" class="codeup">jQuery Introduction.</h1>
+
+    <div>
+        <p id="project-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales lorem nunc, in tempus massa vehicula in.
+            Fusce sapien eros, pretium quis ante a, sollicitudin ultricies lacus. Vestibulum fermentum risus massa, eget
+            posuere lectus tincidunt hendrerit. Morbi ut erat id libero tempus molestie. Vivamus feugiat lacus sed lacus
+            dapibus ullamcorper. Etiam pharetra pretium porta. Sed vel aliquam velit. Aenean vehicula sollicitudin nunc
+            eget dictum. Quisque rhoncus accumsan neque, in pretium enim molestie elementum. Nam mattis feugiat nisi non
+            rutrum. Quisque a convallis elit, quis vulputate velit.
+        </p>
+    </div>
+
+
+    <h3 id="good-bagel">A Good Bagel:</h3>
+    <ul>
+        <li id="first-item">Bagel</li>
+        <li class="codeup">Schmear</li>
+        <li id="codeup">Lox</li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $('h1').click(function() {
+            $(this).css('background-color', "blue")
+        });
+
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px');
+        });
+
+        $('li').hover(function(){
+            $(this).css('color', 'red');
+        }, function() {
+            $(this).css('color', 'black');
+        })
+    </script>
+</body>
+</html>
