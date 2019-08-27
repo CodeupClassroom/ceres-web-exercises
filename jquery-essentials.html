@@ -146,6 +146,20 @@
             $(this).html("Sabretooth Automotive");
         });
 
+        // var holdThis = $('main').html();
+        //
+        // $('main').html('<img src="img/ratcliffe.jpg" alt="cool disney villain Ratcliffe"><h1>SEE HOW HE GLITTER!</h1>').append('<img src="img/pug.jpg" alt="a good doggie">').prepend('<h1>The pug image is too big, halp!</h1>').append(holdThis);
+
+
+
+
+
+
+
+
+
+
+
         $("h1").click(function() {
             if ($('body').hasClass("dark-mode")) {
                 $(this).css({
@@ -167,6 +181,7 @@
         });
 
         $(document).keypress(function(e) {
+            console.log(e);
             if (e.key === "f") {
                 $('body').toggleClass("dark-mode");
             }
