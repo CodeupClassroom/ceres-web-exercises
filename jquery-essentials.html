@@ -18,6 +18,7 @@
             background-color: #1B1B1B;
             background-image: url(img/windows-gif.gif);
             background-size: cover;
+            background-attachment: fixed;
             color: whitesmoke;
         }
         header {
@@ -41,14 +42,14 @@
             background-color: #1B1B1B;
             border-bottom-color: #FE6700;
         }
-        ul {
+        nav ul {
             list-style: none;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
         }
-        li {
+        nav li {
             display: inline-block;
             margin: .4em;
         }
@@ -87,6 +88,9 @@
         }
         .dark-mode .cool-stuff {
             color: #FE6700;
+        }
+        main ul {
+            font-size: 1.5em;
         }
     </style>
 </head>
@@ -136,6 +140,16 @@
 
             Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. So you two dig up, dig up dinosaurs? You really think you can fly that thing? I was part of something special. Do you have any idea how long it takes those cups to decompose.
         </p>
+
+        <h2>Let's Talk about Cheese!</h2>
+        <ul id="cheeses">
+            <li>Muenster</li>
+            <li>Mozzarella</li>
+            <li>Nut Rebel</li>
+            <li>Pepper Jack</li>
+            <li>Colby Jack</li>
+            <li>Kraft American Singles</li>
+        </ul>
     </main>
     <footer></footer>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
