@@ -201,6 +201,31 @@
             }
         });
 
+        $('li').each(function (i) {
+            if (i % 2 === 0) {
+                $(this).css("color", "blue");
+            }
+        });
+
+        $('h1').first().html("First");
+
+        $('h1').last().html("Last");
+
+        // $('ul').last().children().each(function(i) {
+        //     if (i % 2 !== 0) {
+        //         $(this).css('background', 'yellow');
+        //     }
+        // });
+
+        // $('ul').last().children().first().css('background', 'yellow');
+
+        $('main').children('p').first().css('border', "2px solid palevioletred");
+
+        // $('p').first().parent().parent().html("I broke the page, oops");
+        // $('p').first().parents("body").html("I broke the page, oops");
+
+        $('li').first().parent().next().html("Hello, I goofed the navbar.");
+
     </script>
 </body>
 </html>
