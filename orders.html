@@ -48,14 +48,41 @@
         "use strict";
 
         function updatePage() {
-
+            $.ajax('data/orders.json').done(function(data) {
+                $('#orders').html(buildHTML(data));
+            });
         }
 
         function buildHTML(orders) {
 
             var ordersHTML = "";
 
-            $('#orders').html(ordersHTML);
+            // EXAMPLE USING FOR LOOP
+            // for (var i = 0; i < data.length; i++) {
+            //     ordersHTML += "<section>";
+            //     ordersHTML += "    <h3>Order #" + (i + 1) + "</h3>";
+            //     ordersHTML += "    <dl>";
+            //     ordersHTML += "    <dt>Item Ordered</dt>";
+            //     ordersHTML += "    <dd>" + data[i].itemOrdered +  "</dd>";
+            //     ordersHTML += "    <dt>Ordered by</dt>";
+            //     ordersHTML += "    <dd>" + data[i].orderedBy + "</dd>";
+            //     ordersHTML += "    </dl>";
+            //     ordersHTML += "</section>";
+            // }
+
+            orders.forEach(function(order, i) {
+                ordersHTML += "<section>";
+                ordersHTML += "    <h3>Order #" + (i + 1) + "</h3>";
+                ordersHTML += "    <dl>";
+                ordersHTML += "    <dt>Item Ordered</dt>";
+                ordersHTML += "    <dd>" + order.itemOrdered +  "</dd>";
+                ordersHTML += "    <dt>Ordered by</dt>";
+                ordersHTML += "    <dd>" + order.orderedBy + "</dd>";
+                ordersHTML += "    </dl>";
+                ordersHTML += "</section>";
+            });
+
+            return ordersHTML;
         }
 
         $('#update').click(updatePage);
