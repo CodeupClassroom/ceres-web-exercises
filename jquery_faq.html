@@ -7,6 +7,7 @@
     <style>
         * {
             font-family: 'Fira Code', monospace;
+            line-height: 1.5em;
         }
         .invisible {
             visibility: hidden;
@@ -16,6 +17,12 @@
         }
         body {
             font-size: 1.25em;
+        }
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 1.2em;
         }
         #styler {
             position: relative;
@@ -37,9 +44,18 @@
             top: 5px;
             left: 5px;
         }
+        h2 {
+            display: none;
+        }
     </style>
 </head>
 <body>
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span id="hide-newsletter">&#x274C;</span>
+</div>
+
+<h2>Would you like to register for this site?</h2>
 <dl>
     <dt>Lorem Park</dt>
     <dd class="invisible">Something something, blah blah.</dd>
@@ -103,27 +119,47 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function() {
-        $('#styler').click(function() {
-            $('dd').toggleClass('invisible');
+        // $('#styler').click(function() {
+        //     $('dd').toggleClass('invisible');
+        // });
+        //
+        // $('dt').click(function() {
+        //     $(this).css('background', 'yellow');
+        // });
+        //
+        // $('#styler-2').click(function(){
+        //     $('ul').each(function(i) {
+        //         $(this).children().last().css('background-color', "yellow");
+        //     })
+        // });
+        //
+        // $('h3').click(function() {
+        //     $(this).next().children().css('font-weight', "bold");
+        // });
+        //
+        // $('li').click(function() {
+        //     $(this).parent().children().first().css('color', 'blue');
+        // })
+
+        $("#hide-newsletter").click(function() {
+            $(this).parent().next().hide();
         });
 
-        $('dt').click(function() {
-            $(this).css('background', 'yellow');
-        });
+        // The uls next to each h3 that contain facts
+        // about each park should start out hidden,
+        // and when the corresponding h3 is clicked,
+        // the display of the ul should be toggled with a sliding effect.
 
-        $('#styler-2').click(function(){
-            $('ul').each(function(i) {
-                $(this).children().last().css('background-color', "yellow");
-            })
-        });
+        $('ul').hide();
 
         $('h3').click(function() {
-            $(this).next().children().css('font-weight', "bold");
+            $(this).next().slideToggle();
         });
 
-        $('li').click(function() {
-            $(this).parent().children().first().css('color', 'blue');
-        })
+        // After the user has been on the page for 8 seconds,
+        // an h2 should fade in that asks the user to register for the site.
+
+        $('h2').delay(2000).fadeIn();
     });
 
 </script>
