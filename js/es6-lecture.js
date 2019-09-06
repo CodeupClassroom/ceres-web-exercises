@@ -204,41 +204,41 @@ const addOneD = arg1 => arg1 + 1;
 
 // object property variable assignment shorthand
 
-const breed = "Pug";
-const age = 3;
-const name = "Lexie";
-const isCute = true;
+// const breed = "Pug";
+// const age = 3;
+// const name = "Lexie";
+// const isCute = true;
 
 
 // *** 6
 
-var dog = {
-    breed: breed,
-    age: age,
-    name: name,
-    isCute: isCute
-};
-
-const dog1 = {
-    breed,
-    age,
-    name,
-    isCute
-};
-
-
-dog1.breed = "dragon";
-
-
-const arr = [1, 2, 3];
-
-arr[2] = "bob";
+// var dog = {
+//     breed: breed,
+//     age: age,
+//     name: name,
+//     isCute: isCute
+// };
+//
+// const dog1 = {
+//     breed,
+//     age,
+//     name,
+//     isCute
+// };
+//
+//
+// dog1.breed = "dragon";
+//
+//
+// const arr = [1, 2, 3];
+//
+// arr[2] = "bob";
 
 
 
 // console.log(dog);
-console.log(dog1);
-console.log(arr);
+// console.log(dog1);
+// console.log(arr);
 
 
 
@@ -246,12 +246,24 @@ console.log(arr);
 // object / array destructuring
 
 // let puppy = {
-//     breed: "Lab",
+//     breed: {name: "Lab", origin: "unknown"},
 //     age: 10,
 //     name: "Sabrina",
 //     isCute: true
 // };
+
+// var breed = puppy.breed;
+// var age = puppy.age;
+// var name = puppy.name;
+// var isCute = puppy.isCute;
+
+
+// let { origin } = puppy.breed;
 //
+// console.log(origin);
+
+
+
 
 // *** 7
 
@@ -263,10 +275,13 @@ console.log(arr);
 
 // with arrays
 // let cats = ["CJ", "Claude", "Max"];
-//
 
 
 // *** 8
+
+// const [ cat1, cat2, cat3 ] = cats;
+
+
 
 // console.log(cat1);
 // console.log(cat2);
@@ -276,12 +291,12 @@ console.log(arr);
 // using with functions
 
 // const getArea = ({ height, width }) => height * width;
-
+//
 // let shape = {
 //     height: 20,
 //     width: 10
 // };
-//
+
 // console.log(getArea(shape));
 
 // or
@@ -289,7 +304,7 @@ console.log(arr);
 // let width = 10;
 //
 // console.log(getArea({ height, width }));
-
-
+//
+//
 
 
