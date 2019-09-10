@@ -62,25 +62,39 @@
 
 // ============ Basic Example of Promise Creation
 
-    // let goodKid = true;
+    // let isGoodKid = true;
     //
-    // // a promise is made to do something
+    // const getCake = new Promise(function(resolve, reject) {
     //
-    // const getCake = new Promise((res, rej) => {
-    //     if (goodKid) {
-    //         res('You get cake!');
-    //     } else {
-    //         rej('You don\'t cake, bad child.');
-    //     }
+    //     setTimeout(function() {
+    //         if (isGoodKid) {
+    //             resolve("You get cake!!!");
+    //         } else {
+    //             reject("REJECTED! NO CAKE!");
+    //         }
+    //
+    //     }, 2000);
     // });
     //
-    // // once the promise is resolved or rejected, take additional action
+    // getCake.then(function(message) {
+    //     console.log(message);
     //
-    // getCake.then((data) => {
-    //     console.log(data);
-    // }).catch((err) => {
+    // }).catch(function(err) {
     //     console.log(err);
     // });
+
+
+
+
+
+
+
+
+
+
+
+    // // once the promise is resolved or rejected, take additional action
+
 
 
 // ============ !! WAIT EXERCISE !!
@@ -91,6 +105,22 @@
 
 
 // ============ Promise.resolve()
+
+
+
+
+    // new Promise(function(res) {
+    //     res('one');
+    // }).then((one) => {
+    //     console.log(one);
+    //     return 'two';
+    // }).then((two) => {
+    //     console.log(two);
+    //     return 'three';
+    // }).then((three) => {
+    //     console.log(three);
+    // });
+
 
     // Promise.resolve('one').then((one) => {
     //     console.log(one);
@@ -116,29 +146,33 @@
 //     });
 
 // Fetch API GET example
-//     fetch('https://swapi.co/api/people/1')
-//         .then((response) => {
-//             return response.json();
-//         })
-//         .then((data) => {
-//             // build html
-//         })
-//         .catch(console.log);
-//
-//
-//     fetch('https://hookb.in/kxLqNKarPNtepeoxWgnZ', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             username: "bill",
-//             password: "pass123"
-//         })
-//     })
-//         .then(console.log)
-//         .catch(console.log);
+// fetch('https://swapi.co/api/people/1').then(function(res) {
+//     return res.json();
+// }).then(function(data) {
+//     console.log(data);
+// }).catch(function() {
+//     console.log("Something went wrong!");
+// });
 
+
+
+
+
+// Fetch API POST example
+
+    // fetch('https://hookb.in/b9GQ1oVmdpTO8OoeZmwl', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         username: "bill",
+    //         password: "pass123"
+    //     })
+    // })
+    //     .then(console.log)
+    //     .catch(console.log);
+    //
 
 
 
@@ -162,7 +196,6 @@
     //     return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${darkSkyAPI}/${coord.lat},${coord.lng}`)
     //         .then(res => res.json())
     // }
-    //
     //
     // function getCurrentLocation() {
     //     return new Promise(function(res, rej) {
@@ -231,13 +264,14 @@
     // };
     //
     // getCoffee("espresso").then((data) => {
-    //     console.log(data[0]);
-    //     console.log(data[1]);
+    //     console.log(data);
+    //     // console.log(data[0]);
+    //     // console.log(data[1]);
     //     console.log("You now have a coffee!");
     // }).catch((err) => {
     //     console.log(err)
     // });
-
+    //
 
 
 // ============ Promise.race()
@@ -253,7 +287,7 @@
     // const getColor = () => Promise.race([color1Promise, color2Promise]);
     //
     // getColor().then(response => response.json()).then(data => console.log(data));
-    //
+
 
 
 
